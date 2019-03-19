@@ -1,4 +1,4 @@
-## Display a price range for variable priced products
+### Display a price range for variable priced products
 
     /**
      * Display NYP prices as a range.
