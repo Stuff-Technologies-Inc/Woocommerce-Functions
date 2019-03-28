@@ -1,5 +1,7 @@
 ## This function adds the BTCPay meta data stored from the woocommerce plugin into your customer's order details page. This can be useful for showing customers they did not pay the full amount, or for the customers own records. 
 
+*note: This function contains styling that might only apply to our own internal theme. If you are having issues with the display output, I suggest removing all custom classes from the <table>*
+
     /**
      * Display BTCPay custom meta data fields on the customers order details page
      */
