@@ -12,7 +12,7 @@
       echo '<table class="woocommerce-table woocommerce-table--order-details shop_table order_details">';
       echo '<tr>';
       echo '<th scope="row"><strong>'.__('BTC Invoice Link').':</strong></th>';
-      echo '<td><a href="'. get_post_meta( $order->get_id(), 'BTCPay_redirect', true ) . '"> Invoice ID: '  . get_post_meta( $order->get_id(), 'BTCPay_id', true ) . '</a>';
+      echo '<td><a href="'. get_post_meta( $order->get_id(), 'BTCPay_redirect', true ) . '" target="_blank">Invoice ID: '  . get_post_meta( $order->get_id(), 'BTCPay_id', true ) . '</a>';
       echo '</tr>';
       echo '<tr>';
       echo '<th scope="row"><strong>'.__('BTC Address').':</strong></th>';
