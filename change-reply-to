@@ -1,0 +1,17 @@
+// Change Reply-to Email to support@coincards.com
+add_filter( 'woocommerce_email_headers', 'change_reply_to_email_address', 10, 3 );
+function change_reply_to_email_address( $header, $email_id, $order ) {
+
+    // HERE below set the name and the email address
+    $reply_to_name  = 'Coincards.com';
+    $reply_to_email = 'support@coincards.com';
+
+    // Get the WC_Email instance Object
+    $email = new WC_Email($email_id);
+
+    $header  = "Content-Type: " . $email->get_content_type() . "\r\n";
+    $header .= 'Reply-to: ' . $reply_to_name . ' <' . $reply_to_email . ">\r\n";
+
+    return $header;
+}
+
