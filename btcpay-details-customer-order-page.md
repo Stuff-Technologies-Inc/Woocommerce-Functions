@@ -36,6 +36,25 @@
 		echo '</tr>';
 		echo '</table>';
 	}
+	
+	if ($order->get_payment_method() == "binancepay"){
+		echo '<h2>' . $order->get_payment_method_title() . ' PAYMENT DETAILS:</h2>';
+		echo '<table class="woocommerce-table woocommerce-table--order-details shop_table order_details">';
+		echo '<tr>';
+		echo '<th scope="row"><strong>'.__('Binance Checkout URL').':</strong></th>';
+		echo '<td><a href="'. get_post_meta( $order->get_id(), 'BinancePay_checkoutUrl', true ) . '" target="_blank">Invoice ID: '  . get_post_meta( $order->get_id(), 'wc416081r1356', true ) . '</a>';
+		echo '</tr>';
+		echo '<tr>';
+		echo '<th scope="row"><strong>'.__('USDT Amount Total').':</strong></th>';
+		echo '<td>' . get_post_meta( $order->get_id(), 'BinancePay_orderAmount', true );
+		echo '</tr>';
+		echo '<tr>';
+		echo '<th scope="row"><strong>'.__('USDT Exchange Rate').':</strong></th>';
+		echo '<td>' . get_woocommerce_currency_symbol() . get_post_meta( $order->get_id(), 'BinancePay_stableCoinRate', true ) . ' ' . get_woocommerce_currency();
+		echo '</tr>';
+		echo '</table>';
+	}
+	
 	if ($order->get_payment_method() == 'btcpaygf_btc'){$btcpaycoin = 'BTC';
 	} else if ($order->get_payment_method() == 'btcpaygf_xmr'){$btcpaycoin = 'XMR';
 	} else if ($order->get_payment_method() == 'btcpaygf_ltc'){$btcpaycoin = 'LTC';
