@@ -4,12 +4,12 @@
 
 *note: This function contains styling that might only apply to our own internal theme. If you are having issues with the display output, I suggest removing all custom classes from the <table>*
 
-/**
- * Display BTCPay custom meta data fields on the customers order details page
- */
-add_action( 'woocommerce_order_details_after_order_table', 'btcpay_field_display_customer_order_meta', 10, 1 );
+	/**
+	 * Display BTCPay custom meta data fields on the customers order details page
+	 */
+	add_action( 'woocommerce_order_details_after_order_table', 'btcpay_field_display_customer_order_meta', 10, 1 );
 
-function btcpay_field_display_customer_order_meta($order){
+	function btcpay_field_display_customer_order_meta($order){
 	
 	if ($order->get_payment_method() == "btcpay"){
 		echo '<h2>' . $order->get_payment_method_title() . ' PAYMENT DETAILS:</h2>';
@@ -66,5 +66,5 @@ function btcpay_field_display_customer_order_meta($order){
 		echo '<td>' . get_woocommerce_currency_symbol() . get_post_meta( $order->get_id(), 'BTCPay_' . $btcpaycoin . '_rate', true ) . ' ' . get_woocommerce_currency();
 		echo '</tr>';
 		echo '</table>';
+		}
 	}
-}
